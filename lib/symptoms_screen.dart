@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import "suwak.dart";
+import "typ_bolu.dart";
+import "przyczyny_bolu_lista.dart";
+import "czas_trwania_kropeczki.dart";
+//import "scroll_bar.dart";
 
 class SymptomsScreen extends StatefulWidget {
   final DateTime date;
@@ -11,10 +15,14 @@ class SymptomsScreen extends StatefulWidget {
 
 class _SymptomsScreenState extends State<SymptomsScreen> {
   final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
+
+  double _painLevel = 0;
 
   @override
   void dispose() {
     _controller.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -28,6 +36,10 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Objawy — $formattedDate'), centerTitle: true),
+      //body: CustomScrollbar(
+      //controller: _scrollController,
+      //child: SingleChildScrollView(
+      //controller: _scrollController,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -40,8 +52,8 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
             ),
 
             const SizedBox(height: 5),
-            SizedBox(
-              width: double.infinity,
+            Expanded(
+              //width: double.infinity,
               child: TextField(
                 controller: _controller,
                 maxLines: null,
@@ -53,7 +65,38 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
               ),
             ),
 
-            const SizedBox(height: 4),
+            PainIntensitySlider(
+              onChanged: (value) {
+                _painLevel = value;
+              },
+            ),
+
+            // TU DODAJEMY DROPDOWN
+            const SizedBox(height: 16),
+            Text(
+              'Wybierz typ bólu:',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const DropdownMenuExample_typ(),
+
+            // TU DODAJEMY DROPDOWN
+            const SizedBox(height: 16),
+            Text(
+              'Wybierz przyczyny bólu:',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const DropdownMenuExample(),
+
+            //!!!!!!!!!!!!!!!!
+            const SizedBox(height: 16),
+            Text(
+              'Wybierz czas trwania bólu:',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const RadioListTileExample(),
 
             const SizedBox(height: 16),
             SizedBox(

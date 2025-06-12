@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import "calendarscreen.dart";
+//import "calendarscreen.dart";
+import "home_screen.dart";
 
 void main() {
   runApp(PainPalApp());
@@ -11,7 +12,7 @@ class PainPalApp extends StatelessWidget {
     return MaterialApp(
       title: 'PainPal',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      home: CalendarScreen(),
+      home: HomeScreen(),
     );
   }
 }
