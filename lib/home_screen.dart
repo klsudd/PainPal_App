@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'calendar_screen.dart';
-import 'symptoms_screen.dart'; // lub inne ekrany dla kolejnych zakładek
+//import 'symptoms_screen.dart'; // lub inne ekrany dla kolejnych zakładek
+import 'biomet_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -14,17 +15,14 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
     CalendarScreen(),
     // Na razie wstawiamy placeholdery – później podmienisz na właściwe ekrany
-    Center(child: Text('Biomet', style: TextStyle(fontSize: 24))),
+    BiometScreen(),
     Center(child: Text('Statistics', style: TextStyle(fontSize: 24))),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('PainPal'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text('PainPal'), centerTitle: true),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
