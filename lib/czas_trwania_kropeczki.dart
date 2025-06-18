@@ -35,7 +35,7 @@ class _RadioListTileExampleState extends State<RadioListTileExample> {
     return Column(
       children: <Widget>[
         RadioListTile<SingingCharacter>(
-          title: const Text('Lafayette'),
+          title: const Text('1-2h'),
           value: SingingCharacter.lafayette,
           groupValue: _character,
           onChanged: (SingingCharacter? value) {
@@ -45,7 +45,7 @@ class _RadioListTileExampleState extends State<RadioListTileExample> {
           },
         ),
         RadioListTile<SingingCharacter>(
-          title: const Text('Thomas Jefferson'),
+          title: const Text('3-5h'),
           value: SingingCharacter.jefferson,
           groupValue: _character,
           onChanged: (SingingCharacter? value) {
