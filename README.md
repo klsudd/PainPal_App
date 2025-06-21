@@ -1,16 +1,8 @@
-# myapp
+# PainPal App
 
-A new Flutter project.
+new flutter project targeted for people with chronic migraine.
+basing on a calendar view, painpal allows you to enter/select today's symptoms and other accompanying characteristics
+in other screens, painpal displays today's atmospheric pressure in chosen location and informs whether its favorable or not
+final screen shows statistics collected from minimum of 2 weeks of data
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+:))
