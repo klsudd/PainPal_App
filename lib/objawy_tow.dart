@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
-const List<String> list = <String>['Drugs', 'Stimulants', 'Irregular lifestyle', 'Menstrual bleeding', 'Weather factors', 'Diet'];
+const List<String> list = <String>['Nausea/vomiting', 'Photosensitivity', 'Numbness or tingling of body parts', 'Chills/ sweats', 'Dizziness', 'Speech disorders', 'Aura'];
 
 void main() => runApp(const DropdownMenuApp());
 
@@ -12,23 +12,23 @@ class DropdownMenuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('DropdownMenu Sample')),
-        body: const Center(child: DropdownMenuExample()),
+        appBar: AppBar(title: const Text('Select associated symptoms')),
+        body: const Center(child: DropdownMenuExample_objaw()),
       ),
     );
   }
 }
 
-class DropdownMenuExample extends StatefulWidget {
-  const DropdownMenuExample({super.key});
+class DropdownMenuExample_objaw extends StatefulWidget {
+  const DropdownMenuExample_objaw({super.key});
 
   @override
-  State<DropdownMenuExample> createState() => _DropdownMenuExampleState();
+  State<DropdownMenuExample_objaw> createState() => _DropdownMenuExampleState();
 }
 
 typedef MenuEntry = DropdownMenuEntry<String>;
 
-class _DropdownMenuExampleState extends State<DropdownMenuExample> {
+class _DropdownMenuExampleState extends State<DropdownMenuExample_objaw> {
   static final List<MenuEntry> menuEntries = UnmodifiableListView<MenuEntry>(
     list.map<MenuEntry>((String name) => MenuEntry(value: name, label: name)),
   );

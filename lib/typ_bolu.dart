@@ -1,8 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
-/// Flutter code sample for [DropdownMenu].
-
 const List<String> list = <String>['Migraine', 'Tension', 'Throbbing', 'Dull', 'One-sided'];
 
 void main() => runApp(const DropdownMenuApp());
@@ -41,7 +39,6 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample_typ> {
     return DropdownMenu<String>(
       initialSelection: list.first,
       onSelected: (String? value) {
-        // This is called when the user selects an item.
         setState(() {
           dropdownValue = value!;
         });

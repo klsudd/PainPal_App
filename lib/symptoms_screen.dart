@@ -3,6 +3,8 @@ import "suwak.dart";
 import "typ_bolu.dart";
 import "przyczyny_bolu_lista.dart";
 import "czas_trwania_kropeczki.dart";
+import "objawy_tow.dart";
+import "rezultaty_lekow.dart";
 
 class SymptomsScreen extends StatefulWidget {
   final DateTime date;
@@ -27,10 +29,13 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final String formattedDate = widget.date.toLocal().toString().substring(0, 10);
+    final String formattedDate = widget.date.toLocal().toString().substring(
+      0,
+      10,
+    );
 
     return Scaffold(
-      appBar: AppBar(title: Text('Objawy — $formattedDate'), centerTitle: true),
+      appBar: AppBar(title: Text('Symptoms — $formattedDate'), centerTitle: true),
       body: Scrollbar(
         controller: _scrollController,
         thumbVisibility: true,
@@ -41,7 +46,7 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Przyjety lek wraz z dawka (w mg):',
+                'Drug taken with dose (in mg):',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 5),
@@ -53,7 +58,7 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
                   //expands: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Wpisz lek i dawke (w mg)...',
+                    hintText: 'Enter drug and dose (in mg) ...',
                   ),
                 ),
               ),
@@ -64,26 +69,43 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
               ),
               const SizedBox(height: 16),
               Text(
-                'Wybierz typ bólu:',
+                'Choose the type of pain:',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               const DropdownMenuExample_typ(),
               const SizedBox(height: 16),
               Text(
-                'Wybierz przyczyny bólu:',
+                'Select causes of pain:',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               const DropdownMenuExample(),
               const SizedBox(height: 16),
               Text(
-                'Wybierz czas trwania bólu:',
+                'Select pain duration:',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
               const RadioListTileExample(),
               const SizedBox(height: 16),
+
+              Text(
+                'Select accompanying symptoms:',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              const DropdownMenuExample_objaw(),
+              const SizedBox(height: 16),
+
+              Text(
+                'Results of medications taken:',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              const RadioListTileExample_res(),
+              const SizedBox(height: 16),
+
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -91,7 +113,7 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
                     final String opis = _controller.text.trim();
                     Navigator.pop(context, opis);
                   },
-                  child: Text('Zapisz'),
+                  child: Text('Save'),
                 ),
               ),
             ],

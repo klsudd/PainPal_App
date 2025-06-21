@@ -14,7 +14,7 @@ class CustomScrollbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scrollbar(
       controller: controller,
-      thumbVisibility: true, // wymusza widoczność
+      thumbVisibility: true,
       thickness: 8,
       radius: const Radius.circular(10),
       child: child,

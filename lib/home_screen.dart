@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'calendar_screen.dart';
-//import 'symptoms_screen.dart'; // lub inne ekrany dla kolejnych zakładek
 import 'biomet_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,10 +10,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  // Lista ekranów odpowiadających kolejnym zakładkom
   final List<Widget> _pages = [
     CalendarScreen(),
-    // Na razie wstawiamy placeholdery – później podmienisz na właściwe ekrany
     BiometScreen(),
     Center(child: Text('Statistics', style: TextStyle(fontSize: 24))),
   ];

@@ -18,7 +18,7 @@ class _PainIntensitySliderState extends State<PainIntensitySlider> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Natężenie bólu: ${_value.toInt()} / 10',
+          'Pain intensity: ${_value.toInt()} / 10',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         Slider(
